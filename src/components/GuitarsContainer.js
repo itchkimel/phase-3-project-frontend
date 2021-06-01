@@ -1,21 +1,21 @@
-import React, {Component, Fragment} from 'react'
-// import {Label, Form, Button, Input} from 'semantic-ui-react'
-
+import React, {Component} from 'react'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 import GuitarCard from './GuitarCard'
 
 export default class GuitarsContainer extends Component{
 
 
   render(){
-    
-    // const brandFilter = this.props.guitars.filter(guitar => guitar.brand.includes(this.state.filteredDopdown))
 
       return(
         <div >
-          Hello from Guitar container
-          {this.props.guitars.map(guitar => <GuitarCard guitar={guitar} />)}
-          
-        </div>
+            <Container>
+                <Row lg={3}>
+                    {this.props.guitars.map(guitar => <GuitarCard key={guitar.id} guitar={guitar} {...this.props.routerProps} playBattleSong={this.props.playBattleSong} themeSong={this.props.themeSong} />)}
+                </Row>
+            </Container>
+        </div>    
       )
   }
 }

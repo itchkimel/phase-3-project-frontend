@@ -4,11 +4,11 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Navbar from './components/Navbar'
+import Navigation from './components/Navigation'
 import GuitarsContainer from './components/GuitarsContainer'
 import CustomerGuitars from './components/CustomerGuitars'
 import HomePage from './components/HomePage';
-
+import './App.css';
 
 
 export default class App extends Component{
@@ -31,7 +31,7 @@ export default class App extends Component{
   render(){
     return(
       <Router>
-        <Navbar user={this.state.user}  />
+        <Navigation user={this.state.user}  />
           <Switch>
             <Route path='/guitars'>
               <GuitarsContainer guitars={this.state.guitars} />

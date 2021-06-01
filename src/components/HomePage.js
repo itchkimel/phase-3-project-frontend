@@ -1,6 +1,4 @@
-import React, {Component, Fragment} from 'react'
-// import {Label, Form, Button, Input} from 'semantic-ui-react'
-
+import React, {Component} from 'react'
 import GuitarCard from './GuitarCard'
 
 export default class HomePage extends Component{
@@ -11,7 +9,7 @@ export default class HomePage extends Component{
       return(
         <div >
           Guitars on sale!!
-          <GuitarCard />
+          {/* <GuitarCard /> */}
         </div>
       )
   }
