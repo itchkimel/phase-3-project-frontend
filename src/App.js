@@ -8,6 +8,7 @@ import Navigation from './components/Navigation'
 import GuitarsContainer from './components/GuitarsContainer'
 import CustomerGuitars from './components/CustomerGuitars'
 import HomePage from './components/HomePage';
+import Login from './components/Login'
 import './App.css';
 
 
@@ -37,11 +38,14 @@ export default class App extends Component{
               <GuitarsContainer guitars={this.state.guitars} />
             </Route>
             <Route exact path='/yourguitars'>
-              <div>Customers collection</div>
               <CustomerGuitars />
             </Route>
             <Route exact path='/'>
               <div>Nick's home page</div>
+              <HomePage />
+            </Route>
+            <Route exact path='/login'>
+              <Login/>
               <HomePage />
             </Route>
             <Route>
