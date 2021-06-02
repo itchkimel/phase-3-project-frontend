@@ -12,7 +12,7 @@ export default class GuitarsContainer extends Component{
         <div >
             <Container>
                 <Row lg={3}>
-                    {this.props.guitars.map(guitar => <GuitarCard key={guitar.id} guitar={guitar} {...this.props.routerProps} playBattleSong={this.props.playBattleSong} themeSong={this.props.themeSong} />)}
+                    {this.props.guitars.map(guitar => <GuitarCard key={guitar.id} guitar={guitar} {...this.props.routerProps} />)}
                 </Row>
             </Container>
         </div>    
