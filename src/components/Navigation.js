@@ -21,6 +21,7 @@ export default class Navigation extends Component{
               <Nav.Link as={Link} to="/yourguitars">Your Collection</Nav.Link>
               {/* <Nav.Link onclick={<LoginModal></LoginModal>}> Login </Nav.Link> */}
               <Nav.Link as={Link} to="/login"> Login </Nav.Link>
+              <Nav.Link as={Link} to="/cart"> Cart </Nav.Link>
             </Nav>
             <Form inline>
               <FormControl type="text" placeholder="Search" className="mr-sm-2" />

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import GuitarCard from './GuitarCard'
 
-export default class HomePage extends Component{
+export default class Cart extends Component{
 
 
 

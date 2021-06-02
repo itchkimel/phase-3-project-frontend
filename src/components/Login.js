@@ -5,11 +5,41 @@ import {Form, Button, Row, Col} from 'react-bootstrap'
 
 export default class Login extends Component{
 
+    
+
     state = {
-        CustomerGuitars: [], 
+        firstName: '',
+        lastName: '',
+        email: '',
+        customerGuitars: [],
     }
-  
-  
+    
+    handleFirstName = (e) => {
+        this.setState({ firstName: e.target.value })
+    }
+
+    handleLastName = (e) => {
+        this.setState({ lastName: e.target.value })
+    }
+
+    handleEmail = (e) => {
+        this.setState({ email: e.target.value })
+    }
+
+    checkDB = (e) => {
+        e.preventDefault()
+
+        fetch(`http://localhost:9292/customer/${this.state.firstName} ${this.state.lastName}`)
+        .then(res => res.json())
+        .then(res => {
+            if (res.message == 'null'){
+                alert("Please register")
+            }else 
+                {this.props.handleCustomer(res)}
+        })
+
+    }
+
 
 
     render(){
@@ -20,24 +50,24 @@ export default class Login extends Component{
             <Form.Group >
                 <Form.Label>Full Name</Form.Label>
                 <Form>
-                    <Row>
+                    <Form.Row>
                         <Col>
-                        <Form.Control placeholder="First name" />
+                        <Form.Control onChange={this.handleFirstName} placeholder="First name" />
                         </Col>
                         <Col>
-                        <Form.Control placeholder="Last name" />
+                        <Form.Control onChange={this.handleLastName} placeholder="Last name" />
                         </Col>
-                    </Row>
+                    </Form.Row>
                 </Form>
             </Form.Group>
             <Form.Group controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control onChange={this.handleEmail} type="email" placeholder="Enter email" />
                 <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
                 </Form.Text>
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button onClick={this.checkDB} variant="primary" type="submit">
                 Submit
             </Button>
             </Form>
