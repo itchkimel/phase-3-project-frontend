@@ -1,7 +1,6 @@
-import React, {Component, Fragment} from 'react'
+import React, {Component} from 'react'
 
-import GuitarCard from './GuitarCard'
-
+<<<<<<< HEAD
 export default class CustomerGuitars extends Component{
 
   addGuitarToCustomer = () => {
@@ -14,6 +13,9 @@ export default class CustomerGuitars extends Component{
         {this.props.handleCustomer(res)}
 })
 }
+=======
+export default class GuitarsContainer extends Component{
+>>>>>>> 4c184150f52540b5688b0cd2abb08ed96768debd
 
   render(){
     console.log(this.props.customer[0])
