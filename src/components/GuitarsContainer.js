@@ -5,11 +5,8 @@ import GuitarCard from './GuitarCard'
 
 export default class GuitarsContainer extends Component{
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 4c184150f52540b5688b0cd2abb08ed96768debd
   render(){
 
       return(
