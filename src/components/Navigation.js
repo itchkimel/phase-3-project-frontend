@@ -10,7 +10,7 @@ export default class Navigation extends Component{
       return(
         <div>
           <Navbar bg="dark" variant="dark">
-              <Navbar.Brand as={Link} to="/" >Nicks world</Navbar.Brand>
+              <Navbar.Brand as={Link} to="/" className="nav-text">Nicks Guitar World</Navbar.Brand>
               <Nav className="mr-auto">
               <Nav.Link as={Link} to="/guitars">Guitars</Nav.Link>
               <Nav.Link as={Link} to="/yourguitars">Your Guitars</Nav.Link>
@@ -24,9 +24,3 @@ export default class Navigation extends Component{
       )
   }
 }
-
-{/* <div >
-<NavLink to="/"><a className ="active">Home</a></NavLink>
-<NavLink to="/guitars"><a className ="active">Guitars</a></NavLink>
-<NavLink to="/yourguitars"><a className ="active">Your Guitars</a></NavLink>
-</div> */}

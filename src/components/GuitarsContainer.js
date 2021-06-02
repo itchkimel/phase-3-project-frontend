@@ -5,14 +5,13 @@ import GuitarCard from './GuitarCard'
 
 export default class GuitarsContainer extends Component{
 
-
   render(){
 
       return(
-        <div >
+        <div>
             <Container>
-                <Row lg={3}>
-                    {this.props.guitars.map(guitar => <GuitarCard key={guitar.id} guitar={guitar} {...this.props.routerProps} playBattleSong={this.props.playBattleSong} themeSong={this.props.themeSong} />)}
+                <Row sm={4}>
+                    {this.props.guitars.map(guitar => <GuitarCard guitar={guitar}/>)}
                 </Row>
             </Container>
         </div>    

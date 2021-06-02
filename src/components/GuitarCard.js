@@ -1,12 +1,13 @@
-import React, {Component} from 'react'
-import { Button, Card } from 'react-bootstrap'
+// import React, {Component} from 'react'
+import { Button } from 'react-bootstrap'
 import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
 
 const GuitarCard = (props) => {
   return(
       <Col>
           <Card>
-              <Card.Img src={props.guitar.image} alt={props.guitar.brand} />
+              <Card.Img src={props.guitar.image} alt={props.guitar.brand} fluid/>
               <Card.Body>
               <Card.Title >{props.guitar.brand}</Card.Title>
               <Card.Text >{props.guitar.model}</Card.Text>

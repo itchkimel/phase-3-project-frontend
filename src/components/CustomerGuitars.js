@@ -1,10 +1,6 @@
-import React, {Component, Fragment} from 'react'
-
-import GuitarCard from './GuitarCard'
+import React, {Component} from 'react'
 
 export default class GuitarsContainer extends Component{
-
-
 
   render(){
       return(
