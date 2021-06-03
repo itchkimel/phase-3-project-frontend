@@ -18,7 +18,7 @@ export default class App extends Component{
     guitars: [],
     customer: '',
     cartItems: [],
-
+    collection: {}
   }
 
   componentDidMount(){

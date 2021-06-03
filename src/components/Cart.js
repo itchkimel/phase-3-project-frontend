@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import CartGuitar from './CartGuitar'
+// import CartGuitar from './CartGuitar'
 
 export default class Cart extends Component{
 

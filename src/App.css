@@ -8,3 +8,7 @@ body, html {
 .nav-text {
   font-family: 'Trade Winds', cursive;
 }
+
+.guitarCardLayout {
+  margin-top: 1em;
+}

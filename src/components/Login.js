@@ -1,6 +1,6 @@
-import Modal from 'react-bootstrap/Modal'
+// import Modal from 'react-bootstrap/Modal'
 import React, {Component} from 'react'
-import {Form, Button, Row, Col} from 'react-bootstrap'
+import {Form, Button, Col} from 'react-bootstrap'
 
 
 export default class Login extends Component{
@@ -42,8 +42,8 @@ export default class Login extends Component{
         .then(res => {
             if (res.message == 'null'){
                 alert("Please register")
-            }else 
-                {console.log(res)}
+            }else{
+                console.log(res)}
         })
 
     }
