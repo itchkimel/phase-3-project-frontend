@@ -43,7 +43,7 @@ export default class Login extends Component{
             if (res.message == 'null'){
                 alert("Please register")
             }else 
-                {console.log(res)}
+                {this.props.customersCollection(res)}
         })
 
     }

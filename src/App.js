@@ -19,7 +19,7 @@ export default class App extends Component{
     guitars: [],
     customer: '',
     cartItems: [],
-
+    collection: {},
   }
 
   componentDidMount(){
@@ -33,10 +33,10 @@ export default class App extends Component{
   
   }
 
-  addToCart = (e) => { 
-    // console.log(e)
+  customersCollection = (e) => {
+    console.log(e)
     this.setState({
-      cartItems: [...this.state.cartItems, e]
+      collection: e
     })
   }
 
@@ -62,7 +62,7 @@ export default class App extends Component{
                 <Cart cartItems={this.state.cartItems} />
             </Route>
             <Route exact path='/login'>
-              <Login handleCustomer={this.handleCustomer} />
+              <Login handleCustomer={this.handleCustomer} customersCollection={this.customersCollection} />
             </Route>
             <Route exact path='/'>
               <div>Nick's home page</div>
