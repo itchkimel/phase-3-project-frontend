@@ -42,8 +42,8 @@ export default class Login extends Component{
         .then(res => {
             if (res.message == 'null'){
                 alert("Please register")
-            }else{
-                console.log(res)}
+            }else 
+                {this.props.customersCollection(res)}
         })
 
     }
