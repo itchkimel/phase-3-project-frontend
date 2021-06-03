@@ -30,7 +30,8 @@ export default class Login extends Component{
     handleLogin = (e) => {
         e.preventDefault()
         this.setState({
-            loggedIn: !this.state.loggedIn
+            loggedIn: !this.state.loggedIn, 
+
         })
     }
 
@@ -42,8 +43,9 @@ export default class Login extends Component{
         .then(res => {
             if (res.message == 'null'){
                 alert("Please register")
-            }else 
-                {this.props.customersCollection(res)}
+            }else{
+                this.props.customersCollection(res)
+            }
         })
 
     }

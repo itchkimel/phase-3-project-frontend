@@ -2,19 +2,15 @@ import React, {Component} from 'react'
 import CustGuitarCard from './CustGuitarCard'
 
 export default class CustomerGuitars extends Component{
-
-  state = {
-    custGuitars: []
-  }
-
   
 
   render(){
-
+    let guitar_arr = this.props.collection
+    console.log(guitar_arr)
       return(
         <div >
-          {this.state.custGuitars.map(guitar => <CustGuitarCard />)}
-          </div>
+          {guitar_arr.orders.map(guitar => <CustGuitarCard guitar={guitar}/>)}
+        </div>
       )
   }
 }

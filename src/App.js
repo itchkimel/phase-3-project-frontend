@@ -19,6 +19,7 @@ export default class App extends Component{
     customer: '',
     cartItems: [],
     collection: {},
+    loggedIn: false,
   }
 
   componentDidMount(){
@@ -29,11 +30,10 @@ export default class App extends Component{
         guitars
       })
     })
-  
   }
 
   customersCollection = (e) => {
-    console.log(e)
+    // console.log(e)
     this.setState({
       collection: e
     })
@@ -46,22 +46,26 @@ export default class App extends Component{
     })
   }
 
+  handleLogin = () => {
+    debugger
+  }
+
   render(){
     return(
       <Router>
-        <Navigation user={this.state.user}  />
+        <Navigation customer={this.state.customer}  />
           <Switch>
             <Route path='/guitars'>
               <GuitarsContainer guitars={this.state.guitars} addToCart={this.addToCart} />
             </Route>
             <Route exact path='/yourguitars'>
-              <CustomerGuitars customer={this.state.customer} />
+              <CustomerGuitars customer={this.state.customer} collection={this.state.collection} />
             </Route>
               <Route exact path='/cart'>
                 <Cart cartItems={this.state.cartItems} />
             </Route>
             <Route exact path='/login'>
-              <Login handleCustomer={this.handleCustomer} customersCollection={this.customersCollection} />
+              <Login handleCustomer={this.handleCustomer} customersCollection={this.customersCollection} handleLogin={this.handleLogin} />
             </Route>
             <Route exact path='/'>
               <HomePage />
