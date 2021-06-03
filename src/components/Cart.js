@@ -12,7 +12,7 @@ export default class Cart extends Component{
       return(
         <div >
           {this.props.cartItems.map(guitar => <CartGuitar guitar={guitar} deleteFromCart={this.props.deleteFromCart} />)}
-          <Button> Purchase </Button>
+          <Button onClick={() => this.props.purchaseCart()}> Purchase </Button>
         </div>
       )
   }

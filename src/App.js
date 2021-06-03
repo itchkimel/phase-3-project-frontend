@@ -16,13 +16,13 @@ import './App.css';
 export default class App extends Component{
   state = {
     guitars: [],
-    customer: '',
+    // customer: '',
     cartItems: [],
     collection: {},
     loggedIn: false,
   }
 
-  componentDidMount(){
+  componentDidMount() {
     fetch("http://localhost:9292/guitars")
     .then(res => res.json())
     .then( guitars => {
@@ -41,15 +41,26 @@ export default class App extends Component{
   
   deleteFromCart = (res) => {
     let deleteGuitar = this.state.cartItems.filter(item => item.id !== res.id)
-    // console.log(this.state.cartItems)
-    // console.log(res.id)
-    // console.log(test)
-    
     this.setState({
       cartItems: deleteGuitar
     })
   }
-  
+
+  purchaseCart = () => {
+    let newOrder = [...this.state.cartItems, this.state.collection.name]
+    fetch("http://localhost:9292/order", {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json",
+      },
+      body: JSON.stringify(newOrder)
+    })
+    .then(res => res.json())
+    .then( guitars => {
+        console.log(guitars)
+      })
+  }
+    
   customersCollection = (e) => {
     this.setState({
       collection: e
@@ -92,7 +103,7 @@ export default class App extends Component{
               <CustomerGuitars customer={this.state.customer} collection={this.state.collection} />
             </Route>
             <Route exact path='/cart'>
-              <Cart cartItems={this.state.cartItems} deleteFromCart={this.deleteFromCart} />
+              <Cart purchaseCart={this.purchaseCart} cartItems={this.state.cartItems} deleteFromCart={this.deleteFromCart} />
             </Route>
             <Route exact path='/login' render={(routerProps) =>
               <Login routerProps={routerProps} loggedIn={this.state.loggedIn} handleCustomer={this.handleCustomer} customersCollection={this.customersCollection} handleLogin={this.handleLogin} />} />
