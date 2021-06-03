@@ -19,6 +19,7 @@ export default class App extends Component{
     guitars: [],
     customer: '',
     cartItems: [],
+
   }
 
   componentDidMount(){
@@ -32,28 +33,15 @@ export default class App extends Component{
   
   }
 
-  // addToCart = (e) => { 
-  //   console.log(e)
-  //   this.setState({
-  //     cartItems: e
-  //   })
-  //   fetch(`http://localhost:9292/customer/${this.state.customer.name}`, {
-  //     method: "PATCH",
-  //     headers: {
-  //         "Content-type": "application/json"
-  //     },
-  //     body: JSON.stringify({
-  //       order_history: this.state.cartItems
-  //     })
-  //  })
-  //     .then(res => res.json())
-  //     .then((res) => {
-  //        console.log(res)
-  //     })
-  // }
+  addToCart = (e) => { 
+    // console.log(e)
+    this.setState({
+      cartItems: [...this.state.cartItems, e]
+    })
+  }
 
   handleCustomer = (e) => {
-    // console.log(e)
+    console.log(e)
     this.setState({
       customer: e
     })
@@ -71,7 +59,7 @@ export default class App extends Component{
               <CustomerGuitars customer={this.state.customer} />
             </Route>
               <Route exact path='/cart'>
-                <Cart/>
+                <Cart cartItems={this.state.cartItems} />
             </Route>
             <Route exact path='/login'>
               <Login handleCustomer={this.handleCustomer} />

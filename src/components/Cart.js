@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import GuitarCard from './GuitarCard'
+import CartGuitar from './CartGuitar'
 
 export default class Cart extends Component{
 
@@ -8,7 +8,6 @@ export default class Cart extends Component{
   render(){
       return(
         <div >
-          {/* <GuitarCard /> */}
         </div>
       )
   }
