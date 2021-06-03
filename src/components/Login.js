@@ -12,7 +12,6 @@ export default class Login extends Component{
         lastName: '',
         email: '',
         custGuitars: [],
-        loggedIn: false
     }
     
     handleFirstName = (e) => {
@@ -27,14 +26,6 @@ export default class Login extends Component{
         this.setState({ email: e.target.value })
     }
 
-    handleLogin = (e) => {
-        e.preventDefault()
-        this.setState({
-            loggedIn: !this.state.loggedIn, 
-
-        })
-    }
-
     checkDB = (e) => {
         e.preventDefault()
 
@@ -44,7 +35,7 @@ export default class Login extends Component{
             if (res.message == 'null'){
                 alert("Please register")
             }else{
-                this.props.customersCollection(res)
+                this.props.customersCollection(res); this.props.handleLogin(); this.props.routerProps.history.push("/guitars")
             }
         })
 
@@ -57,7 +48,7 @@ export default class Login extends Component{
 
       return(
         <div>
-            <Form>
+            <Form  >
             <Form.Group >
                 <Form.Label>Full Name</Form.Label>
                 <Form>
@@ -78,9 +69,9 @@ export default class Login extends Component{
                     We'll never share your email with anyone else.
                 </Form.Text>
             </Form.Group>
-            <Button onClick={this.checkDB} variant="primary" type="submit">
+            {this.state.email === '' ? "Please enter email" : <Button onClick={this.checkDB} variant="primary" type="submit">
                 Submit
-            </Button>
+                </Button>}
             </Form>
         </div>
       )

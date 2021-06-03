@@ -128,7 +128,7 @@ export default class GuitarsContainer extends Component{
 
             <Container>
                 <Row lg={4}>
-                    {this.props.guitars.map(guitar => <GuitarCard key={guitar.id} guitar={guitar} {...this.props.routerProps} addToCart={this.props.addToCart} />)}
+                    {this.props.guitars.map(guitar => <GuitarCard key={guitar.id} guitar={guitar} {...this.props.routerProps} addToCart={this.props.addToCart} loggedIn={this.props.loggedIn} />)}
                 </Row>
             </Container>
         </div>    

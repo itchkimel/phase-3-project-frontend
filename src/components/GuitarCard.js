@@ -2,6 +2,11 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMusic } from '@fortawesome/free-solid-svg-icons'
+
+const music = <FontAwesomeIcon icon={faMusic} />
+
 
 const GuitarCard = (props) => {
 
@@ -14,8 +19,7 @@ const GuitarCard = (props) => {
               <Card.Text >{props.guitar.model}</Card.Text>
               <Card.Text>{props.guitar.color}</Card.Text>
               <Card.Text>${props.guitar.price}</Card.Text>
-              <Card.Text>{props.guitar.id}</Card.Text>
-              <Button variant="outline-dark" onClick={() => props.addToCart(props.guitar)} > Add To Cart</Button>
+              {props.loggedIn === true ? <Button variant="outline-dark" onClick={() => props.addToCart(props.guitar)} > Add To Cart</Button> : music}
               </Card.Body>
           </Card>
       </Col>
