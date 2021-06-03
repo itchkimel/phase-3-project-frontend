@@ -15,7 +15,7 @@ export default class Navigation extends Component{
       return(
         <div>
           <Navbar bg="dark" variant="dark">
-              <Navbar.Brand as={Link} to="/" >Nick's world</Navbar.Brand>
+              <Navbar.Brand as={Link} to="/" className="nav-text">Nick's Guitar Bar</Navbar.Brand>
               <Nav className="mr-auto">
               <Nav.Link as={Link} to="/guitars">Guitars</Nav.Link>
               <Nav.Link as={Link} to="/yourguitars">Your Collection</Nav.Link>
