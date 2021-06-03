@@ -11,7 +11,6 @@ import HomePage from './components/HomePage';
 import Login from './components/Login'
 import Cart from './components/Cart'
 import './App.css';
-import { ThemeProvider } from 'react-bootstrap';
 
 
 export default class App extends Component{
@@ -65,7 +64,6 @@ export default class App extends Component{
               <Login handleCustomer={this.handleCustomer} customersCollection={this.customersCollection} />
             </Route>
             <Route exact path='/'>
-              <div>Nick's home page</div>
               <HomePage />
             </Route>
             <Route>
