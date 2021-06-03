@@ -11,7 +11,8 @@ export default class Login extends Component{
         firstName: '',
         lastName: '',
         email: '',
-        customerGuitars: [],
+        custGuitars: [],
+        loggedIn: false
     }
     
     handleFirstName = (e) => {
@@ -26,6 +27,13 @@ export default class Login extends Component{
         this.setState({ email: e.target.value })
     }
 
+    handleLogin = (e) => {
+        e.preventDefault()
+        this.setState({
+            loggedIn: !this.state.loggedIn
+        })
+    }
+
     checkDB = (e) => {
         e.preventDefault()
 
@@ -35,11 +43,12 @@ export default class Login extends Component{
             if (res.message == 'null'){
                 alert("Please register")
             }else 
-                {this.props.handleCustomer(res)}
+                {console.log(res)}
         })
 
     }
-
+    
+ 
 
 
     render(){
