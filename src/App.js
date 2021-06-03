@@ -10,6 +10,7 @@ import CustomerGuitars from './components/CustomerGuitars'
 import HomePage from './components/HomePage';
 import Login from './components/Login'
 import Cart from './components/Cart'
+import Register from './components/Register'
 import './App.css';
 
 
@@ -96,23 +97,33 @@ export default class App extends Component{
       <Router>
         <Route render={(routerProps) => <Navigation routerProps={routerProps} loggedIn={this.state.loggedIn} handleLogout={this.handleLogout} /> } />
           <Switch>
+            
             <Route path='/guitars'>
               <GuitarsContainer guitars={this.state.guitars} addToCart={this.addToCart} loggedIn={this.state.loggedIn} />
             </Route>
+            
             <Route exact path='/yourguitars'>
               <CustomerGuitars customer={this.state.customer} collection={this.state.collection} />
             </Route>
+
             <Route exact path='/cart'>
               <Cart purchaseCart={this.purchaseCart} cartItems={this.state.cartItems} deleteFromCart={this.deleteFromCart} />
             </Route>
+            
+            <Route exact path='/register' render={(routerProps) =>
+              <Register routerProps={routerProps} />} />
+            
             <Route exact path='/login' render={(routerProps) =>
               <Login routerProps={routerProps} loggedIn={this.state.loggedIn} handleCustomer={this.handleCustomer} customersCollection={this.customersCollection} handleLogin={this.handleLogin} />} />
+            
             <Route exact path='/'>
               <HomePage />
             </Route>
+            
             <Route>
               <div>404 No matching URL</div>
             </Route>
+          
           </Switch>
       </Router>
     )

@@ -22,6 +22,7 @@ export default class Navigation extends Component{
               {this.props.loggedIn === false ? null : <Nav.Link as={Link} to="/yourguitars">Your Collection</Nav.Link>}
               {this.props.loggedIn === false ? null : <Nav.Link as={Link} to="/cart"> Cart </Nav.Link>}
             </Nav>
+            <Button variant="outline-light"><Nav.Link as={Link} to="/register" > Register </Nav.Link></Button>
             
               {this.props.loggedIn === false ? <Button variant="outline-light"><Nav.Link as={Link} to="/login" > Login </Nav.Link></Button>: <Button variant="outline-light" 
               onClick={() => {

@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import {Form, Button, Col} from 'react-bootstrap'
 
 
-export default class Login extends Component{
+export default class Register extends Component{
 
     
 
@@ -11,7 +11,6 @@ export default class Login extends Component{
         firstName: '',
         lastName: '',
         email: '',
-        custGuitars: [],
     }
     
     handleFirstName = (e) => {
@@ -26,20 +25,20 @@ export default class Login extends Component{
         this.setState({ email: e.target.value })
     }
 
-    checkDB = (e) => {
-        e.preventDefault()
+    // checkDB = (e) => {
+    //     e.preventDefault()
 
-        fetch(`http://localhost:9292/customer/${this.state.firstName} ${this.state.lastName}`)
-        .then(res => res.json())
-        .then(res => {
-            if (res.message == 'null'){
-                this.props.routerProps.history.push("/register")
-            }else{
-                this.props.customersCollection(res); this.props.handleLogin(); this.props.routerProps.history.push("/guitars")
-            }
-        })
+    //     fetch(`http://localhost:9292/customer/${this.state.firstName} ${this.state.lastName}`)
+    //     .then(res => res.json())
+    //     .then(res => {
+    //         if (res.message == 'null'){
+    //             alert("Please register")
+    //         }else{
+    //             this.props.customersCollection(res); this.props.handleLogin(); this.props.routerProps.history.push("/guitars")
+    //         }
+    //     })
 
-    }
+    // }
     
  
 
@@ -50,7 +49,7 @@ export default class Login extends Component{
         <div>
             <Form  >
             <Form.Group >
-                <Form.Label>Login Page</Form.Label>
+                <Form.Label>Register to order</Form.Label>
                 <Form>
                     <Form.Row>
                         <Col>
@@ -69,10 +68,10 @@ export default class Login extends Component{
                     We'll never share your email with anyone else.
                 </Form.Text>
             </Form.Group>
-            {this.state.email === '' ? "Please enter email" : <Button onClick={this.checkDB} variant="primary" type="submit">
+            {this.state.email === '' ? "Please enter email to register" : <Button onClick={this.checkDB} variant="primary" type="submit">
                 Submit
                 </Button>}
             </Form>
         </div>
-    )}
+      )}
 }
