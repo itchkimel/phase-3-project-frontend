@@ -11,7 +11,6 @@ import HomePage from './components/HomePage';
 import Login from './components/Login'
 import Cart from './components/Cart'
 import './App.css';
-import { ThemeProvider } from 'react-bootstrap';
 
 
 export default class App extends Component{

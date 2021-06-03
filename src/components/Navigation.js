@@ -15,7 +15,7 @@ export default class Navigation extends Component{
       return(
         <div>
           <Navbar bg="dark" variant="dark">
-              <Navbar.Brand as={Link} to="/" >Nick's world</Navbar.Brand>
+              <Navbar.Brand as={Link} to="/" className="nav-text">Nick's Guitar World</Navbar.Brand>
               <Nav className="mr-auto">
               <Nav.Link as={Link} to="/guitars">Guitars</Nav.Link>
               <Nav.Link as={Link} to="/yourguitars">Your Collection</Nav.Link>
@@ -25,7 +25,7 @@ export default class Navigation extends Component{
             </Nav>
             <Form inline>
               <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-              <Button variant="outline-info">Search</Button>
+              <Button variant="outline-light">Search</Button>
             </Form>
           </Navbar>
       </div>
