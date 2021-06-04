@@ -18,7 +18,7 @@ const GuitarCard = (props) => {
               <Card.Title className="nav-text">{props.guitar.brand}</Card.Title>
               <Card.Text >{props.guitar.model}</Card.Text>
               <Card.Text>{props.guitar.color}</Card.Text>
-              <Card.Text>${props.guitar.price}</Card.Text>
+              <Card.Text className="price-text">${props.guitar.price}</Card.Text>
               {props.loggedIn === true ? <Button variant="outline-dark" onClick={() => props.addToCart(props.guitar)} > Add To Cart</Button> : music}
               </Card.Body>
           </Card>

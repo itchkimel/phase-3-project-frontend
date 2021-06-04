@@ -27,75 +27,10 @@ export default class GuitarsContainer extends Component{
                 Dive into our handpicked selection of axes, all guaranteed to pack some heat into your rig.
               </p>
               <p>
-                <Button variant="outline-dark">Search by Filter</Button>
+                <Button variant="dark">Search by Filter</Button>
               </p>
               <p>
               <Form className="form_content_wrap">
-                  <Form.Group>
-                    <Form.Label>Brand: &nbsp;</Form.Label>
-
-                    <Form.Check
-                      inline
-                      label="Gibson"
-                      name="Gibson"
-                      />
-                      <Form.Check
-                      inline
-                      label="Fender"
-                      name="Fender"
-                      />
-                      <Form.Check
-                      inline
-                      label="Gretsch"
-                      name="Gretsch"
-                      />
-                      <Form.Check
-                      inline
-                      label="Danelectro"
-                      name="Danelectro"
-                      />
-                      <Form.Check
-                      inline
-                      label="Charvel"
-                      name="Charvel"
-                      />
-                      <Form.Check
-                      inline
-                      label="ESP"
-                      name="ESP"
-                      />
-                      <Form.Check
-                      inline
-                      label="ESP"
-                      name="ESP"
-                      />
-                      <Form.Check
-                      inline
-                      label="Ibanez"
-                      name="Ibanez"
-                      />
-                      <Form.Check
-                      inline
-                      label="Jackson"
-                      name="Jackson"
-                      />
-                      <Form.Check
-                      inline
-                      label="Rickenbacker"
-                      name="Rickenbacker"
-                      />
-                  </Form.Group>
-
-                  <Form.Group>
-                    {/* <Form.Label>Model: &nbsp;</Form.Label>
-
-                    <Form.Check
-                      inline
-                      label="Les Paul"
-                      name="Les Paul"
-                      // onChange={(e) => onRadioChange(e)}
-                    /> */}
-                  </Form.Group>
 
                   <Form.Group>
                     <Form.Label>Keyword</Form.Label>
@@ -109,14 +44,14 @@ export default class GuitarsContainer extends Component{
 
 
                   <Button
-                    variant="primary"
+                    variant="outline-dark"
                     type="submit"
                     // onClick={onFormSubmit}
                     style={{ marginRight: "10px" }}
                   >
                     Submit
                   </Button>
-                  <Button variant="primary" type="submit">
+                  <Button variant="outline-dark" type="submit">
                     Clear
                   </Button>
                

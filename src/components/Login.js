@@ -67,10 +67,10 @@ export default class Login extends Component{
                 <Form.Label>Email address</Form.Label>
                 <Form.Control onChange={this.handleEmail} type="email" placeholder="Enter email" />
                 <Form.Text className="text-muted">
-                    We require an email. We'll never share your it with anyone else.
+                    Email required
                 </Form.Text>
             </Form.Group>
-            {this.state.email === '' ? "Please enter email" : <Button onClick={this.checkDB} variant="primary" type="submit">
+            {this.state.email === '' ? "" : <Button onClick={this.checkDB} variant="primary" type="submit">
                 Login
                 </Button>}
             </Form>

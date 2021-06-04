@@ -75,10 +75,10 @@ export default class Register extends Component{
                 <Form.Label>Email address</Form.Label>
                 <Form.Control onChange={this.handleEmail} type="email" placeholder="Enter email" />
                 <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
+                    We require an email. We'll never share it with anyone else.
                 </Form.Text>
             </Form.Group>
-            {this.state.email === '' ? "Please enter email to register" : <Button onClick={this.addCustomer} variant="primary" type="submit">
+            {this.state.email === '' ? "" : <Button onClick={this.addCustomer} variant="primary" type="submit">
                 Register
 
                 </Button>}
