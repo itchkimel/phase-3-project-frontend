@@ -32,16 +32,18 @@ export default class Login extends Component{
     }
 
     handleEmail = (e) => {
+        e.preventDefault()
         this.setState({ email: e.target.value })
     }
 
     checkDB = (e) => {
-        // e.preventDefault()
+        e.preventDefault()
 
         fetch(`http://localhost:9292/customer/${this.state.firstName} ${this.state.lastName}`)
         .then(res => res.json())
         .then(res => {
             if (res.message == 'null'){
+                console.log(res)
                 this.props.routerProps.history.push("/register")
             }else{
                 this.props.customersCollection(res); this.props.handleLogin(); this.props.routerProps.history.push("/guitars")
@@ -79,10 +81,10 @@ export default class Login extends Component{
                     Email required
                 </Form.Text>
             </Form.Group>
-            {this.state.email === '' ? "" : <Button onClick={() => {
-                this.checkDB();
-                this.showModal()
-            }} variant="primary" type="submit">
+            {this.state.email === '' ? "" : <Button onClick={
+                this.checkDB
+                // this.showModal()
+            } variant="primary" type="submit">
                 Login
                 </Button>}
                 <RegisterModal show={this.state.show}/>

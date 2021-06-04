@@ -53,7 +53,8 @@ export default class Register extends Component{
           });
           
           // setTimeout(() => {
-            this.props.routerProps.history.push("/login")
+            // this.props.routerProps.history.push("/login")
+            window.location.href = 'http://localhost:3000/login'
           // }, 3000)
         })
     }
@@ -87,11 +88,11 @@ export default class Register extends Component{
                     We require an email. We'll never share it with anyone else.
                 </Form.Text>
             </Form.Group>
-            {this.state.email === '' ? "" : <Button onClick={() => {
-              this.addCustomer();
-              this.showModal(); 
+            {this.state.email === '' ? "" : <Button onClick={
+              this.addCustomer
+              // this.showModal(); 
               
-            }} variant="primary" type="submit">
+            } variant="primary" type="submit">
                 Register
                 </Button>}
                 <ThanksForRegisterModal show={this.state.show}/>
