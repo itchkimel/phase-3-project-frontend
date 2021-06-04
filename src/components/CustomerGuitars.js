@@ -21,17 +21,3 @@ export default class CustomerGuitars extends Component{
       )
   }
 }
-
-//     fetch(`http://localhost:9292/order/${this.props.customer.id}`, {
-//           method: "PATCH",
-//           headers: {
-//               "Content-type": "application/json"
-//           },
-//           body: JSON.stringify({
-            
-//           })
-//     })
-//     .then(res => res.json())
-//     .then(res => {
-    
-// })

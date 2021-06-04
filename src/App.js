@@ -17,7 +17,7 @@ import './App.css';
 export default class App extends Component{
   state = {
     guitars: [],
-    // customer: '',
+    filteredText: '',
     cartItems: [],
     collection: {},
     loggedIn: false,
@@ -27,13 +27,10 @@ export default class App extends Component{
     fetch("http://localhost:9292/guitars")
     .then(res => res.json())
     .then( guitars => {
-      this.setState({
-        guitars
-      })
+      this.setState({ guitars })
     })
   }
 
-  
   addToCart = (e) => {
     this.setState({
       cartItems: [...this.state.cartItems, e]
@@ -81,8 +78,6 @@ export default class App extends Component{
   }
   
   handleLogout = (e) => {
-    // e.preventDefault(e) 
-
     this.setState({
       customer: '',
       cartItems: [],
@@ -91,15 +86,24 @@ export default class App extends Component{
     })
   }
 
+  handleFilter = (e) => {
+    this.setState({
+      filteredText: e.target.value
+
+    })
+  }
+
 
   render(){
+    // let filterBrand = this.state.guitars.filter(guitar => guitar.brand.includes(this.state.filteredText.charAt(0).toUpperCase()) || guitar.color.includes(this.state.filteredText.charAt(0).toUpperCase()) || guitar.material.includes(this.state.filteredText.charAt(0).toUpperCase()) || guitar.model.includes(this.state.filteredText.charAt(0).toUpperCase()) )
+    let filterBrand = this.state.guitars.filter(guitar => guitar.brand.includes(this.state.filteredText) || guitar.color.includes(this.state.filteredText) || guitar.material.includes(this.state.filteredText) || guitar.model.includes(this.state.filteredText) )
+
     return(
       <Router>
         <Route render={(routerProps) => <Navigation routerProps={routerProps} loggedIn={this.state.loggedIn} handleLogout={this.handleLogout} /> } />
           <Switch>
-            
             <Route path='/guitars'>
-              <GuitarsContainer guitars={this.state.guitars} addToCart={this.addToCart} loggedIn={this.state.loggedIn} />
+              <GuitarsContainer guitars={filterBrand} addToCart={this.addToCart} loggedIn={this.state.loggedIn} handleFilter={this.handleFilter} />
             </Route>
             
             <Route exact path='/yourguitars'>
