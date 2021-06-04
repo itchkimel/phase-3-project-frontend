@@ -9,7 +9,7 @@ export default class Register extends Component{
 
     state = {
         firstName: '',
-        lastName: '',
+        fullName: '',
         email: '',
     }
     
@@ -17,28 +17,37 @@ export default class Register extends Component{
         this.setState({ firstName: e.target.value })
     }
 
-    handleLastName = (e) => {
-        this.setState({ lastName: e.target.value })
+    handleFullName = (e) => {
+        this.setState({ fullName: this.state.firstName + " " + e.target.value})
     }
 
     handleEmail = (e) => {
         this.setState({ email: e.target.value })
     }
 
-    // checkDB = (e) => {
-    //     e.preventDefault()
+    addCustomer = (e) => {
+        e.preventDefault()
 
-    //     fetch(`http://localhost:9292/customer/${this.state.firstName} ${this.state.lastName}`)
-    //     .then(res => res.json())
-    //     .then(res => {
-    //         if (res.message == 'null'){
-    //             alert("Please register")
-    //         }else{
-    //             this.props.customersCollection(res); this.props.handleLogin(); this.props.routerProps.history.push("/guitars")
-    //         }
-    //     })
-
-    // }
+        fetch(`http://localhost:9292/customer/`,{
+          method: "POST",
+          headers: {
+            "Content-Type" : "application/json",
+          },
+          body: JSON.stringify(this.state)
+        })
+        .then(res => res.json())
+        .then(res => {
+          this.setState({
+            firstName: '',
+            fullName: '',
+            email: '',
+          });
+          alert("Thanks for registering to Nick's Guitar World! \n Redirecting to login in 3 seconds")
+          setTimeout(() => {
+            this.props.routerProps.history.push("/login")
+          }, 3000)
+        })
+    }
     
  
 
@@ -57,7 +66,7 @@ export default class Register extends Component{
                         <Form.Control onChange={this.handleFirstName} placeholder="First name" />
                         </Col>
                         <Col>
-                        <Form.Control onChange={this.handleLastName} placeholder="Last name" />
+                        <Form.Control onChange={this.handleFullName} placeholder="Last name" />
                         </Col>
                     </Form.Row>
                 </Form>
@@ -69,8 +78,9 @@ export default class Register extends Component{
                     We'll never share your email with anyone else.
                 </Form.Text>
             </Form.Group>
-            {this.state.email === '' ? "Please enter email to register" : <Button onClick={this.checkDB} variant="primary" type="submit">
+            {this.state.email === '' ? "Please enter email to register" : <Button onClick={this.addCustomer} variant="primary" type="submit">
                 Register
+
                 </Button>}
             </Form>
         </div>
