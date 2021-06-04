@@ -1,4 +1,4 @@
-// import Modal from 'react-bootstrap/Modal'
+
 import React, {Component} from 'react'
 import {Form, Button, Col} from 'react-bootstrap'
 import RegisterModal from './RegisterModal'
@@ -14,12 +14,12 @@ export default class Login extends Component{
         lastName: '',
         email: '',
         custGuitars: [],
-        modalShow: false,
+        show: false,
     }
     
-    setModalShow = (e) => {
+    showModal = (e) => {
         this.setState({
-            modalShow: true
+            show: true
         })
     }
 
@@ -36,14 +36,12 @@ export default class Login extends Component{
     }
 
     checkDB = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
 
         fetch(`http://localhost:9292/customer/${this.state.firstName} ${this.state.lastName}`)
         .then(res => res.json())
         .then(res => {
             if (res.message == 'null'){
-            // // change to modal here and by register
-            //     this.setModal()
                 this.props.routerProps.history.push("/register")
             }else{
                 this.props.customersCollection(res); this.props.handleLogin(); this.props.routerProps.history.push("/guitars")
@@ -81,8 +79,12 @@ export default class Login extends Component{
                     Email required
                 </Form.Text>
             </Form.Group>
-            {this.state.email === '' ? "" : <Button onClick={this.checkDB} variant="primary" type="submit">
+            {this.state.email === '' ? "" : <Button onClick={() => {
+                this.checkDB();
+                this.showModal();
+            }} variant="primary" type="submit">
                 Login
+                <RegisterModal show={this.state.show}/>
                 </Button>}
             </Form>
         </div>

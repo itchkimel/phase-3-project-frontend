@@ -1,6 +1,7 @@
 // import Modal from 'react-bootstrap/Modal'
 import React, {Component} from 'react'
 import {Form, Button, Col} from 'react-bootstrap'
+import ThanksForRegisterModal from './ThanksForRegisterModal'
 
 
 export default class Register extends Component{
@@ -11,8 +12,15 @@ export default class Register extends Component{
         firstName: '',
         fullName: '',
         email: '',
+        show: false,
     }
     
+    showModal = (e) => {
+      this.setState({
+          show: true
+      })
+  }
+
     handleFirstName = (e) => {
         this.setState({ firstName: e.target.value })
     }
@@ -42,11 +50,10 @@ export default class Register extends Component{
             fullName: '',
             email: '',
           });
-          // change to modal here and by login
-          alert("Thanks for registering to Nick's Guitar World! \n Redirecting to login in 3 seconds")
-          setTimeout(() => {
+          
+          // setTimeout(() => {
             this.props.routerProps.history.push("/login")
-          }, 3000)
+          // }, 3000)
         })
     }
     
@@ -79,11 +86,15 @@ export default class Register extends Component{
                     We require an email. We'll never share it with anyone else.
                 </Form.Text>
             </Form.Group>
-            {this.state.email === '' ? "" : <Button onClick={this.addCustomer} variant="primary" type="submit">
+            {this.state.email === '' ? "" : <Button onClick={() => { 
+              this.showModal();
+              this.addCustomer();
+            }} variant="primary" type="submit">
                 Register
-
+                <ThanksForRegisterModal show={this.state.show}/>
                 </Button>}
             </Form>
         </div>
-      )}
+      )
+    }
 }
