@@ -56,7 +56,8 @@ export default class Register extends Component{
 
       return(
         <div>
-            <Form  >
+            <h1 className="loginRegisterText">Register</h1>
+            <Form className="Login" >
             <Form.Group >
                 <Form.Label>Register to order</Form.Label>
                 <Form>
@@ -78,7 +79,8 @@ export default class Register extends Component{
                 </Form.Text>
             </Form.Group>
             {this.state.email === '' ? "Please enter email to register" : <Button onClick={this.addCustomer} variant="primary" type="submit">
-                Submit
+                Register
+
                 </Button>}
             </Form>
         </div>
