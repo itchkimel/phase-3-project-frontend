@@ -31,60 +31,6 @@ export default class GuitarsContainer extends Component{
             </p>
             <p>
             <Form className="form_content_wrap">
-                <Form.Group>
-                  <Form.Label>Brand: &nbsp;</Form.Label>
-
-                  <Form.Check
-                    inline
-                    label="Gibson"
-                    name="Gibson"
-                    />
-                    <Form.Check
-                    inline
-                    label="Fender"
-                    name="Fender"
-                    />
-                    <Form.Check
-                    inline
-                    label="Gretsch"
-                    name="Gretsch"
-                    />
-                    <Form.Check
-                    inline
-                    label="Danelectro"
-                    name="Danelectro"
-                    />
-                    <Form.Check
-                    inline
-                    label="Charvel"
-                    name="Charvel"
-                    />
-                    <Form.Check
-                    inline
-                    label="ESP"
-                    name="ESP"
-                    />
-                    <Form.Check
-                    inline
-                    label="ESP"
-                    name="ESP"
-                    />
-                    <Form.Check
-                    inline
-                    label="Ibanez"
-                    name="Ibanez"
-                    />
-                    <Form.Check
-                    inline
-                    label="Jackson"
-                    name="Jackson"
-                    />
-                    <Form.Check
-                    inline
-                    label="Rickenbacker"
-                    name="Rickenbacker"
-                    />
-                </Form.Group>
 
                 <Form.Group >
                   <Form.Label>Keyword</Form.Label>

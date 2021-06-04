@@ -6,13 +6,12 @@ const CustGuitarCard = (props) => {
     console.log(props.guitar)
   return(
       <Col>
-          <Card className='text-center guitarCardLayout' >
+            <Card className='text-center guitarCardLayout' >
               <Card.Img src={props.guitar.guitar.image} alt={props.guitar.guitar.brand} fluid/>
               <Card.Body>
               <Card.Title className='nav-text' >{props.guitar.guitar.brand}</Card.Title>
               <Card.Text >{props.guitar.guitar.model}</Card.Text>
               <Card.Text>{props.guitar.guitar.color}</Card.Text>
-              <Card.Text>${props.guitar.guitar.price}</Card.Text>
               </Card.Body>
           </Card>
       </Col>
