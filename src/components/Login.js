@@ -17,7 +17,7 @@ export default class Login extends Component{
         modalShow: false,
     }
     
-    setModalShow = () => {
+    setModalShow = (e) => {
         this.setState({
             modalShow: true
         })
@@ -42,7 +42,8 @@ export default class Login extends Component{
         .then(res => res.json())
         .then(res => {
             if (res.message == 'null'){
-            // change to modal here and by register
+            // // change to modal here and by register
+            //     this.setModal()
                 this.props.routerProps.history.push("/register")
             }else{
                 this.props.customersCollection(res); this.props.handleLogin(); this.props.routerProps.history.push("/guitars")
