@@ -8,7 +8,6 @@ export default class CustomerGuitars extends Component{
 
   render(){
     let guitar_arr = this.props.collection
-    console.log(guitar_arr)
       return(
         <div >
          <h1 className="loginRegisterText">Purchases</h1>

@@ -89,13 +89,3 @@ export default class Login extends Component{
       )
     }
 }
-
-
-//   checkCustomer = ()=> {
-//     fetch("http://localhost:9292/guitars")
-//     .then(res => res.json())
-//     .then( guitars => {
-//       this.setState({
-//         guitars
-//       })
-//     })
