@@ -1,6 +1,8 @@
 // import Modal from 'react-bootstrap/Modal'
 import React, {Component} from 'react'
 import {Form, Button, Col} from 'react-bootstrap'
+import RegisterModal from './RegisterModal'
+
 
 
 export default class Login extends Component{
@@ -12,8 +14,15 @@ export default class Login extends Component{
         lastName: '',
         email: '',
         custGuitars: [],
+        modalShow: false,
     }
     
+    setModalShow = () => {
+        this.setState({
+            modalShow: true
+        })
+    }
+
     handleFirstName = (e) => {
         this.setState({ firstName: e.target.value })
     }
@@ -34,7 +43,6 @@ export default class Login extends Component{
         .then(res => {
             if (res.message == 'null'){
             // change to modal here and by register
-                alert("Please register")
                 this.props.routerProps.history.push("/register")
             }else{
                 this.props.customersCollection(res); this.props.handleLogin(); this.props.routerProps.history.push("/guitars")
