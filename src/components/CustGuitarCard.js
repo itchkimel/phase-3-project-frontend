@@ -11,7 +11,6 @@ const CustGuitarCard = (props) => {
               <Card.Body>
               <Card.Title className='nav-text' >{props.guitar.guitar.brand}</Card.Title>
               <Card.Text >{props.guitar.guitar.model}</Card.Text>
-              <Card.Text>{props.guitar.guitar.color}</Card.Text>
               </Card.Body>
           </Card>
       </Col>

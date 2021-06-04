@@ -3,7 +3,10 @@ import CartGuitar from './CartGuitar'
 import {Button} from 'react-bootstrap'
 import {Container} from 'react-bootstrap'
 import {Row} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
+const cart = <FontAwesomeIcon icon={faShoppingCart} />
 
 export default class Cart extends Component{
 
@@ -14,7 +17,10 @@ export default class Cart extends Component{
       return(
         <div >
           <h1 className="loginRegisterText">My Cart<br></br>
-          <Button className="loginRegisterText" variant="outline-dark" onClick={() => this.props.purchaseCart()}> Purchase </Button>
+          
+          {this.props.cartItems == '' ?
+          cart
+          : <Button variant="outline-dark" onClick={() => this.props.purchaseCart()}> Purchase </Button>}
           </h1>
           <Container>
           <Row lg={4} className="justify-content-md-center">

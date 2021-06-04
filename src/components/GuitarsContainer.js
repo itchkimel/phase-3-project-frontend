@@ -10,11 +10,13 @@ import Form from 'react-bootstrap/Form'
 export default class GuitarsContainer extends Component{
 
   state = {
-    showHide: false,
+    showHide: true
   }
 
   showComponent = () => {
-    
+    this.setState({
+      showHide: !this.state.showHide
+    })
   }
 
   render(){
@@ -22,35 +24,24 @@ export default class GuitarsContainer extends Component{
     return(
       <div>
         <Jumbotron className="text-center">
-            <h1 className="nav-text">The Guitars Collection</h1>
-            <p>
-              Dive into our handpicked selection of axes, all guaranteed to pack some heat into your rig.
+            <h1 className="nav-text jumbotronText">The Guitar Collection</h1>
+            <p className="jumbotronText poppins-txt">
+              Dive into our handpicked selection of axes, all guaranteed to pack some heat into your rig.<br></br>
+               Browse the entire collection below or choose a search tailored to your fit below.
             </p>
             <p>
-              <Button variant="outline-dark">Search by Filter</Button>
+              <Button onClick={this.showComponent}variant="light jumbotronText">Search by Filter</Button>
             </p>
             <p>
-            <Form className="form_content_wrap">
+            {this.state.showHide == true ? " " : <Form className="form_content_wrap">
 
                 <Form.Group >
-                  <Form.Label>Keyword</Form.Label>
+                  <Form.Label className="jumbotronText mainHeaderCaption">e.g. "Gibson", "Red", "Mahogany"</Form.Label>
                   <Form.Control onChange={(e) => this.props.handleFilter(e)}
                     type="text"
                     placeholder="search description"/>
-                </Form.Group>
-
-                <Button
-                  variant="primary"
-                  type="submit"
-                  style={{ marginRight: "10px" }}
-                >
-                  Submit
-                </Button>
-                <Button variant="primary" type="submit">
-                  Clear
-                </Button>
-              
-            </Form>
+                </Form.Group>    
+            </Form>}
             </p>
           </Jumbotron>
 

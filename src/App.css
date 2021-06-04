@@ -5,6 +5,11 @@ body, html {
   font-family: 'Poppins', sans-serif;
 }
 
+.poppins-txt {
+  font-family: 'Poppins', sans-serif;
+  color: rgb(233, 202, 157);
+}
+
 .nav-text {
   font-family: 'Trade Winds', cursive;
 }
@@ -19,11 +24,16 @@ body, html {
   margin-bottom: 1em;
 }
 
+.guitarCardLayout:hover { 
+  transform: scale(1.1); 
+  }
+
 .loginRegisterText {
   font-family: 'Cedarville Cursive', cursive;
   text-align: center;
-  margin-top: 2em;
-  margin-bottom: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+  font-size: 5em;
 }
 
 @media all and (min-width: 480px) {
@@ -37,6 +47,30 @@ body, html {
     margin: 0 auto;
     max-width: 320px;
   }
+}
+
+.mainHeaderText {
+  font-size: 3.5em;
+  text-shadow: #e0e0e0 1px 1px 0;
+}
+
+
+.mainHeaderCaption {
+  font-size: 1.5em;
+  margin-bottom: 2em;
+}
+
+.loginButtonSpace {
+  margin-left: 1em;
+}
+.jumbotron {
+  background-image: url("https://guitarsquid.com/wp-content/uploads/2019/12/best-guitar-picks-for-beginners.jpg");
+  background-size: cover;
+}
+
+.jumbotronText {
+  color: rgb(192, 178, 178);
+  filter: brightness(150%);
 }
 
 

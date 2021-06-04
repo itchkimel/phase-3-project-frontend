@@ -15,11 +15,10 @@ export default class HomePage extends Component{
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3 className="nav-text">Welcome To Nicks Guitar World</h3>
-          <p>The finest handpicked selection of guitars in New York City.{"\n"}
-            1922-3B Broadway ave. {"\n"}
+          <h3 className="nav-text mainHeaderText">Nick's Guitar Bar</h3>
+          <p className="mainHeaderCaption">The finest handpicked selection of guitars in New York City.<br></br> Established in 2021.{"\n"}
+             {"\n"}
             Brooklyn, Ny{"\n"}
-            11221{"\n"}
           </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -31,8 +30,8 @@ export default class HomePage extends Component{
         />
 
         <Carousel.Caption>
-          <h3 className="nav-text">Free and Fast Shipping</h3>
-          <p>Enjoy our free shipping and lightning fast delivery to keep up with the speed of your riffs. All items packed with extreme care and precision. Money Back guarantee.</p>
+          <h3 className="nav-text mainHeaderText">Free and Fast Shipping</h3>
+          <p className="mainHeaderCaption">Enjoy our free shipping and lightning fast delivery to keep up with the speed of your riffs. All items packed with extreme care and precision. Money Back guarantee.</p>
         </Carousel.Caption>
       </Carousel.Item>
   </Carousel>
