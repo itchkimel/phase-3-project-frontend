@@ -57,9 +57,9 @@ export default class App extends Component{
     .then( guitars => {
       // maybe modal or conditional rendering
         this.setState({
-          cartItems: []
+          cartItems: [],
         });
-        // this.history.push("/yourguitars")
+        window.location.href = 'http://localhost:3000/'
       })
   }
     
@@ -99,7 +99,7 @@ export default class App extends Component{
 
 
   render(){
-    // let filterBrand = this.state.guitars.filter(guitar => guitar.brand.includes(this.state.filteredText.charAt(0).toUpperCase()) || guitar.color.includes(this.state.filteredText.charAt(0).toUpperCase()) || guitar.material.includes(this.state.filteredText.charAt(0).toUpperCase()) || guitar.model.includes(this.state.filteredText.charAt(0).toUpperCase()) )
+
     let filterBrand = this.state.guitars.filter(guitar => guitar.brand.includes(this.state.filteredText) || guitar.color.includes(this.state.filteredText) || guitar.material.includes(this.state.filteredText) || guitar.model.includes(this.state.filteredText) )
 
     return(
