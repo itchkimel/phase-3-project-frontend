@@ -17,9 +17,9 @@ export default class Login extends Component{
         show: false,
     }
     
-    showModal = (e) => {
+    showModal = () => {
         this.setState({
-            show: true
+            show: !this.state.show
         })
     }
 
@@ -81,11 +81,11 @@ export default class Login extends Component{
             </Form.Group>
             {this.state.email === '' ? "" : <Button onClick={() => {
                 this.checkDB();
-                this.showModal();
+                this.showModal()
             }} variant="primary" type="submit">
                 Login
-                <RegisterModal show={this.state.show}/>
                 </Button>}
+                <RegisterModal show={this.state.show}/>
             </Form>
         </div>
       )

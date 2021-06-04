@@ -15,9 +15,10 @@ export default class Register extends Component{
         show: false,
     }
     
-    showModal = (e) => {
+    showModal = () => {
+    
       this.setState({
-          show: true
+          show: !this.state.show
       })
   }
 
@@ -33,8 +34,8 @@ export default class Register extends Component{
         this.setState({ email: e.target.value })
     }
 
-    addCustomer = (e) => {
-        e.preventDefault()
+    addCustomer = () => {
+        // e.preventDefault()
 
         fetch(`http://localhost:9292/customer/`,{
           method: "POST",
@@ -86,13 +87,14 @@ export default class Register extends Component{
                     We require an email. We'll never share it with anyone else.
                 </Form.Text>
             </Form.Group>
-            {this.state.email === '' ? "" : <Button onClick={() => { 
-              this.showModal();
+            {this.state.email === '' ? "" : <Button onClick={() => {
               this.addCustomer();
+              this.showModal(); 
+              
             }} variant="primary" type="submit">
                 Register
-                <ThanksForRegisterModal show={this.state.show}/>
                 </Button>}
+                <ThanksForRegisterModal show={this.state.show}/>
             </Form>
         </div>
       )
