@@ -5,6 +5,7 @@ import GuitarCard from './GuitarCard'
 import Button from 'react-bootstrap/Button'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Form from 'react-bootstrap/Form'
+import AddToCartModal from './AddToCartModal'
 
 
 export default class GuitarsContainer extends Component{
@@ -48,6 +49,7 @@ export default class GuitarsContainer extends Component{
           <Container>
               <Row lg={4}>
                   {this.props.guitars.map(guitar => <GuitarCard key={guitar.id} guitar={guitar} {...this.props.routerProps} addToCart={this.props.addToCart} loggedIn={this.props.loggedIn} />)}
+                  <AddToCartModal guitars={this.props.guitars}/>
               </Row>
           </Container>
       </div>    

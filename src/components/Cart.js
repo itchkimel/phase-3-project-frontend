@@ -18,8 +18,7 @@ export default class Cart extends Component{
         <div >
           <h1 className="loginRegisterText">My Cart<br></br>
           
-          {this.props.cartItems == '' ?
-          cart
+          {this.props.cartItems == '' ? <p>looks like you need to do some shopping... {cart}</p>
           : <Button variant="outline-dark" onClick={() => this.props.purchaseCart()}> Purchase </Button>}
           </h1>
           <Container>
