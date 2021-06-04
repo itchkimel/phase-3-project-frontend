@@ -42,6 +42,7 @@ export default class Register extends Component{
             fullName: '',
             email: '',
           });
+          // change to modal here and by login
           alert("Thanks for registering to Nick's Guitar World! \n Redirecting to login in 3 seconds")
           setTimeout(() => {
             this.props.routerProps.history.push("/login")

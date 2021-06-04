@@ -55,7 +55,11 @@ export default class App extends Component{
     })
     .then(res => res.json())
     .then( guitars => {
-        console.log(guitars)
+      // maybe modal or conditional rendering
+        this.setState({
+          cartItems: []
+        });
+        // this.history.push("/yourguitars")
       })
   }
     
